@@ -1,0 +1,6 @@
+[
+    {
+        "ParameterKey": "BucketName",
+        "ParameterValue": "gestion-fondos-pipeline-artifact-bucket"
+    }
+]

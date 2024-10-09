@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Template to Create a CodeCommit Repo
+
+Parameters:
+  RepoName:
+    Type: String
+    Description: Name of CodeCommit Repo
+    Default: ""
+
+Resources:
+  gestionFondosRepo:
+    Type: AWS::CodeCommit::Repository
+    Properties:
+      RepositoryName: !Ref RepoName
+Outputs:
+  gestionFondosRepoName:
+    Description: CodeCommit Repo Name
+    Value: !GetAtt gestionFondosRepo.Name
+    Export:
+      Name: gestionFondosRepoName
+  gestionFondosRepoHTTPCloneURL:
+    Description: CodeCommit Repo HTTP Clone URL
+    Value: !GetAtt gestionFondosRepo.CloneUrlHttp
+    Export:
+      Name: gestionFondosRepoHTTPCloneURL
